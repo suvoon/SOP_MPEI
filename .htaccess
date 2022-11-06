@@ -1,0 +1,8 @@
+﻿RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+AddType text/css .css
+AddType 'text/css; charset=UTF-8' .css
+AddType text/javascript .js
+RewriteCond %{REQUEST_URI} !(\.css|\.js|\.png|\.jpg|\.gif|robots\.txt)$ [NC]
+RewriteRule ^.*$ index.php [END]

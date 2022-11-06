@@ -1,0 +1,842 @@
+﻿/*-------НАЧАЛО ОБНУЛЕНИЯ----------*/
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+:focus,
+:active {
+	outline: none;
+}
+
+a:focus,
+a:active {
+	outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+	color: #000;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+/*---------КОНЕЦ ОБНУЛЕНИЯ-----------*/
+
+/*-------НАЧАЛО СТРАНИЦЫ ШАБЛОНА-------------*/
+body {
+	font-family: Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background-color: #fff;
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container {
+	max-width: 1000px;
+	padding: 18px 20px 18px 20px;
+	margin: 0px auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/*каждый блок df, jcc, делить по блокам шириной 100%*/
+}
+
+.content {
+	width: 100%;
+	flex: 1 1 auto;
+	padding-top: 75px;
+	font-size: 1.2rem;
+}
+
+.footer {
+	width: 100%;
+	background-color: #fff;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-bottom: 0.6rem;
+	font-family: raleway;
+	text-align: center;
+}
+
+h3 {
+	width: 100%;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+/*-------НАЧАЛО ПАНЕЛИ МЕНЮ-------------*/
+.menu-bar {
+	z-index: 3;
+	position: fixed;
+	background-color: #fff;
+	width: 100%;
+	transition: 0.2s;
+}
+
+.bar-scrolled {
+	box-shadow: 0px 2px 4px rgb(128, 128, 128);
+}
+
+.menu-bar__container {
+	padding: 8px 20px 16px 20px;
+}
+
+.menu-bar__list {
+	width: 100%;
+	display: flex;
+	list-style-type: none;
+	justify-content: space-around;
+}
+
+.menu-bar__list>li {
+	display: inline-block;
+	position: relative;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	padding: 5px 11.5px 0px 11.5px;
+}
+
+.menu-bar__list li>a {
+	color: #472828;
+	font-size: 1.6rem;
+}
+
+.username:hover {
+	cursor: pointer;
+}
+
+.logo {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.logo img {
+	margin-top: 5px;
+	margin-right: 5px;
+	border-radius: 50%;
+}
+
+/*-------НАЧАЛО ВСПЛЫВАЮЩЕГО ОКНА ПОЛЬЗОВАТЕЛЯ-------------*/
+.user {
+	position: relative;
+}
+
+.user__popup {
+	position: absolute;
+	display: flex;
+	font-size: 1rem;
+	line-height: 1rem;
+	font-family: raleway;
+	padding: 1rem;
+	top: 60px;
+	right: 0;
+	box-shadow: 0px 0px 10px 5px rgba(34, 60, 80, 0.2);
+	transition: 0.1s;
+	visibility: hidden;
+	background-color: #EAEAEA;
+}
+
+.user:hover .user__popup {
+	visibility: visible;
+}
+
+.user__popup:hover {
+	visibility: visible;
+}
+
+.user__info {
+	padding-left: 1rem;
+	height: 100%;
+	text-align: center;
+	color: #000;
+}
+
+.user__image {
+	width: 95px;
+	height: 95px;
+	margin: 15px auto;
+}
+
+.user__image img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.user__profile {
+	text-align: center;
+	color: #777;
+	letter-spacing: 0.1rem;
+	width: 100%;
+	padding-top: 20px;
+	padding-left: 1rem;
+	height: 100%;
+}
+
+.user__link {
+	height: 2rem;
+	width: 18rem;
+	text-align: center;
+	color: #000;
+	font-size: 1.4rem;
+	line-height: 2rem;
+	letter-spacing: normal;
+	margin-bottom: 3px;
+	transition: color 0.2s, background-color 0.2s;
+}
+
+.user__link:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+.admin-btn {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	height: 1.5rem;
+}
+
+/*-------КОНЕЦ ВСПЛЫВАЮЩЕГО ОКНА ПОЛЬЗОВАТЕЛЯ------------*/
+/*-------КОНЕЦ ПАНЕЛИ МЕНЮ-------------------------------*/
+/*-------КОНЕЦ СТРАНИЦЫ ШАБЛОНА--------------------------*/
+
+/*-------НАЧАЛО ГЛАВНОЙ СТРАНИЦЫ-------------------------*/
+.main-image img {
+	max-width: 100%;
+}
+
+/*-------КОНЕЦ ГЛАВНОЙ СТРАНИЦЫ-------------------------*/
+
+/*-------НАЧАЛО АВТОРИЗАЦИИ -------------*/
+.top-margin {
+	margin-top: 10%;
+}
+
+.content {
+	background: url("/images/background.jpg") no-repeat center center fixed;
+}
+
+.auth {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 3rem;
+}
+
+.auth__field {
+	margin-bottom: 0.6rem;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.centered {
+	justify-content: center;
+	align-items: center;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.auth__field h2,
+.auth__field h3 {
+	padding-right: 1rem;
+}
+
+.auth__field input {
+	border: 1px solid #000;
+	font-size: 1rem;
+	height: 1.8rem;
+	padding-left: 0.3rem;
+}
+
+.auth__btn {
+	margin: 0 auto;
+	padding: 0.4rem;
+	font-size: 1.2rem;
+	margin-bottom: 1rem;
+	box-shadow: 0 0 3px rgb(116, 116, 116);
+}
+
+.error-message {
+	width: 100%;
+	height: 2.3rem;
+	font-size: 1.3rem;
+	text-align: center;
+	padding-bottom: 1rem;
+	color: #be5353;
+}
+
+.auth__btn:hover {
+	cursor: pointer;
+	box-shadow: 0 0 0 red;
+}
+
+/*-------КОНЕЦ АВТОРИЗАЦИИ -------------*/
+
+/*-------НАЧАЛО НАСТРОЕК ПОЛЬЗОВАТЕЛЯ-------------*/
+h2 {
+	font-size: 1.5rem;
+	margin-bottom: 0.6rem;
+	font-family: raleway;
+}
+
+.settings-change {
+	display: flex;
+	width: 100%;
+	margin-bottom: 0.5rem;
+	font-family: raleway, arial;
+}
+
+.settings-change__current,
+.settings-change__new {
+	flex: 1 1 50%;
+	padding: 1rem;
+}
+
+#pfp-change {
+	max-width: 70%;
+}
+
+.settings-change__current p {
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 1.5rem;
+}
+
+.settings-change__new input:first-child {
+	margin-bottom: 0.5rem;
+
+}
+
+.current__avatar {
+	display: inline-block;
+	height: 5rem;
+	width: 5rem;
+	margin-left: 2rem;
+}
+
+.current__avatar img {
+	width: 100%;
+	height: 100%;
+}
+
+.settings-change__new p {
+	display: inline-block;
+	margin-bottom: 1rem;
+}
+
+.username-field {
+	border: 1px solid #000;
+	padding: 0.2rem 0.5rem;
+	font-size: 1.2rem;
+	max-width: 19rem;
+}
+
+.submit-btn {
+	vertical-align: top;
+	font-size: 1rem;
+	padding: 0.3rem 0.5rem;
+	border: 1px solid rgb(61, 61, 61);
+	cursor: pointer;
+}
+
+/*-------КОНЕЦ НАСТРОЕК ПОЛЬЗОВАТЕЛЯ-------------*/
+
+/*----НАЧАЛО СТРАНИЦЫ С ОПРОСАМИ-----*/
+
+.intro h1,
+.intro h2 {
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+.intro__text {
+	margin-top: 10px;
+	font-size: 16px;
+	line-height: 25px;
+	margin-bottom: 20px;
+}
+
+.surveys__table {
+	border: 1px solid #000;
+	border-collapse: collapse;
+	text-align: left;
+	background-color: #fff;
+	width: 100%;
+}
+
+td,
+th {
+	border: 1px solid #C4C4C4;
+	padding: 15px 10px 15px 10px;
+}
+
+td {
+	background-color: #ffffff;
+}
+
+td a,
+td a:visited {
+	color: rgb(45, 45, 248);
+}
+
+td a:hover {
+	text-decoration: underline;
+}
+
+.quiz {
+	width: 100%;
+}
+
+.quiz__title {
+	color: #352CE1;
+	margin-bottom: 1rem;
+}
+
+.quiz__block {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 40px;
+	padding: 12px 0px 10px 0px;
+	border-top: 1px solid #C4C4C4;
+	font-size: 16px;
+}
+
+span {
+	margin-right: 20px;
+}
+
+.quiz__block fieldset {
+	display: flex;
+	flex-direction: row-reverse;
+	flex: 0 0 35%;
+	margin-right: 159px;
+}
+
+.quiz__block input {
+	flex: 0 0 17px;
+	margin-right: 16px;
+}
+
+.quiz__note input {
+	padding: 10px;
+	flex: 1 1 100%;
+	margin-bottom: 2.5rem;
+	font-size: 1rem;
+}
+
+.text {
+	flex: 0 1 100%;
+	height: 60px;
+	border: 1px solid #000;
+}
+
+.button-block {
+	display: flex;
+	justify-content: center;
+}
+
+.send-btn {
+	color: #fff;
+	font-size: 16px;
+	height: 40px;
+	width: 120px;
+	border-radius: 5px;
+	background-color: #3AEC4B;
+}
+
+.send-btn.hidden {
+	display: none;
+}
+
+.send-btn:hover {
+	color: #fff;
+	background-color: #29FF3E;
+}
+
+/*----КОНЕЦ СТРАНИЦЫ С ОПРОСАМИ-----*/
+
+/*-------НАЧАЛО ПАНЕЛИ АДМИНИСТРАТОРА -------------*/
+.admin-search {
+	margin: 0.3rem;
+}
+
+.admin-search form {
+	display: flex;
+	justify-content: center;
+}
+
+.admin-input {
+	border: 1px solid #000;
+	padding: 0.2rem;
+	font-size: 1rem;
+	margin-right: 1rem;
+	resize: none;
+}
+
+.admin-querybtn {
+	padding: 0.2rem 0.4rem;
+	font-size: 1rem;
+	cursor: pointer;
+	border: 1px solid #000;
+	height: 100%;
+	align-self: center;
+}
+
+.admin-query {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 0.5rem;
+}
+
+.admin-query__info-block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid rgb(136, 136, 136);
+	padding: 0.6rem;
+	background-color: #fff;
+	margin: 0.5rem;
+}
+
+.info-block__name {
+	padding-bottom: 0.5rem;
+}
+
+.info-block__button {
+	padding: 0.3rem;
+	font-size: 1rem;
+	cursor: pointer;
+	border: 1px solid #000;
+}
+
+.tab {
+	overflow: hidden;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+	margin-bottom: 1.5rem;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	font-size: 1rem;
+	transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+	background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+	display: none;
+	width: 100%;
+	padding: 6px 12px;
+	border-top: none;
+}
+
+.tabcontent.active {
+	display: block;
+}
+
+.tabcontent h2 {
+	margin-bottom: 1.2rem;
+}
+
+.usersearch-block {
+	margin-bottom: 3rem;
+}
+
+.error-userchange {
+	display: none;
+}
+
+.error-userchange.active {
+	display: block;
+}
+
+.error-top {
+	margin-top: 1rem;
+}
+
+.error-top.active {
+	display: block;
+}
+
+.useradd-block form,
+.hidden__content form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.add-field {
+	margin-bottom: 0.8rem;
+}
+
+.add-field label {
+	margin-right: 1rem;
+}
+
+.first-field {
+	padding-left: 1.5rem;
+}
+
+.sec-field {
+	padding-left: 0.8rem;
+}
+
+.fourth-field {
+	padding-left: 0.4rem;
+}
+
+.info-block__hidden {
+	display: none;
+}
+
+.info-block__hidden.active {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(112, 112, 112, 0.562);
+}
+
+.hidden__content {
+	background-color: #fff;
+	z-index: 20;
+	padding: 60px;
+	box-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+
+.newpass-field,
+.newpass-lbl {
+	display: none;
+}
+
+.info-block__survey-button {
+	padding: 0.3rem;
+	font-size: 1rem;
+	cursor: pointer;
+	box-shadow: 0 0 2px #000;
+	border-radius: 3px;
+	background-color: #fff;
+	margin: 0.2rem;
+}
+
+.info-block__survey-button:hover {
+	background-color: rgb(230, 230, 230);
+	box-shadow: 0 0 0px #000;
+}
+
+.survey-constructor {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 1rem;
+}
+
+.survey-constructor__create-btn {
+	position: relative;
+	font-size: 1.5rem;
+	background-color: transparent;
+}
+
+.survey-constructor__create-btn:hover {
+	color: rgb(94, 94, 94);
+}
+
+.survey-constructor__create-btn::before {
+	content: "+";
+	position: absolute;
+	left: -1.5rem;
+	color: rgb(44, 196, 44);
+	font-style: normal;
+	font-weight: 900;
+}
+
+.survey-constructor__constructor-block {
+	display: none;
+	align-items: center;
+	flex-direction: column;
+}
+
+.survey-constructor__title-inputs {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.survey-constructor__title-inputs label {
+	padding-right: 1rem;
+}
+
+.survey-constructor__title-inputs .title-inputs__block {
+	margin: 10px 0;
+}
+
+.title-inputs__block {
+	display: flex;
+	align-items: center;
+}
+
+.title-inputs__block input,
+.title-inputs__block textarea {
+	box-shadow: 0 0 3px rgb(104, 104, 104);
+}
+
+.title-inputs__block input {
+	padding: 5px;
+}
+
+.title-inputs__block textarea {
+	resize: none;
+	padding: 10px;
+	margin-right: 1rem;
+}
+
+.survey-constructor__survey-block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	margin: 10px;
+	width: 55%;
+	box-shadow: 0 0 4px rgb(51, 51, 51);
+	background-color: rgba(172, 172, 172, 0.562);
+}
+
+.block-title>input {
+	padding: 5px;
+	margin-bottom: 10px;
+	box-shadow: 0 0 3px rgb(104, 104, 104);
+}
+
+.survey-constructor__survey-block fieldset {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin: 10px 0;
+}
+
+.survey-constructor__survey-block input {
+	margin: 5px 0;
+}
+
+.question-field {
+	padding: 5px;
+	margin-top: 10px;
+	resize: none;
+	box-shadow: 0 0 3px rgb(104, 104, 104);
+}
+
+/*-------КОНЕЦ ПАНЕЛИ АДМИНИСТРАТОРА -------------*/
